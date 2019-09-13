@@ -4,26 +4,20 @@ import styles from "../card.module.css"
 class FilmCard extends React.Component {
 	render() {
 		return (
-			<div>
-				<h1 className={styles.card__title}>
+			<div className={styles.card__inner}>
+				<h3 className={styles.card__title}>
 					#{this.props.film.episodeId} - {this.props.film.title}
-				</h1>
-				<h5 className={styles.card__subtitle}>
-					Release Date:
-					<span className={styles.card__copy}>
-						{new Date(this.props.film.releaseDate).toLocaleDateString("en-US")}
-					</span>
-				</h5>
-				<h5 className={styles.card__subtitle}>
-					Director:
-					<span className={styles.card__copy}>{this.props.film.director}</span>
-				</h5>
-				<h5 className={styles.card__subtitle}>
-					Opening Crawl:
-					<span className={styles.card__copy}>
-						{this.props.film.openingCrawl}
-					</span>
-				</h5>
+				</h3>
+				<h4 className={styles.card__subtitle}>Release Date:</h4>
+				<p className={styles.card__copy}>
+					{new Date(this.props.film.releaseDate).toLocaleDateString("en-US")}
+				</p>
+
+				<h4 className={styles.card__subtitle}>Director:</h4>
+				<p className={styles.card__copy}>{this.props.film.director}</p>
+
+				<h4 className={styles.card__subtitle}>Opening Crawl:</h4>
+				<p className={styles.card__copy}>{this.props.film.openingCrawl}</p>
 			</div>
 		)
 	}
