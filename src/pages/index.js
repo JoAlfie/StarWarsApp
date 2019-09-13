@@ -3,27 +3,25 @@ import { graphql } from "gatsby"
 import FilmList from "../components/films/filmsList"
 import CharacterList from "../components/characters/characterList"
 
-class StarWarsApp extends React.Component {
-	render() {
-		const {
-			swapi: { allFilms, allPersons },
-		} = this.props.data
+const StarWarsApp = ({ data }) => {
+	const {
+		swapi: { allFilms, allPersons },
+	} = data
 
-		return (
-			<div className="star-wars-app">
-				<div className="stars"></div>
-				<div className="twinkling"></div>
-				<div className="content">
-					<h1 className="page__title">Star Wars</h1>
-					<h2 className="section__title">Films</h2>
-					<FilmList films={allFilms} />
+	return (
+		<div className="star-wars-app">
+			<div className="stars"></div>
+			<div className="twinkling"></div>
+			<div className="content">
+				<h1 className="page__title">Star Wars</h1>
+				<h2 className="section__title">Films</h2>
+				<FilmList films={allFilms} />
 
-					<h2 className="section__title">Characters</h2>
-					<CharacterList characters={allPersons} />
-				</div>
+				<h2 className="section__title">Characters</h2>
+				<CharacterList characters={allPersons} />
 			</div>
-		)
-	}
+		</div>
+	)
 }
 
 // This query is executed at build time by Gatsby
