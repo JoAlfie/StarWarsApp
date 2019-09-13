@@ -38,6 +38,7 @@
 
 .card__inner {
 	overflow: auto;
+	flex: 1;
 }
 
 .card__title {
