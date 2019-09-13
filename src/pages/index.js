@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import FilmList from "../components/films/filmList"
+import FilmList from "../components/films/filmsList"
 import CharacterList from "../components/characters/characterList"
 
 class StarWarsApp extends React.Component {
@@ -24,5 +24,37 @@ class StarWarsApp extends React.Component {
 		)
 	}
 }
+
+// This query is executed at build time by Gatsby
+export const GatsbyQuery = graphql`
+	{
+		swapi {
+			allFilms {
+				id
+				title
+				releaseDate
+				openingCrawl
+				episodeId
+				director
+			}
+			allPersons {
+				id
+				name
+				homeworld {
+					name
+				}
+				species {
+					name
+				}
+				birthYear
+				height
+				eyeColor
+				starships {
+					name
+				}
+			}
+		}
+	}
+`
 
 export default StarWarsApp
