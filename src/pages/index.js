@@ -14,6 +14,7 @@ class StarWarsApp extends React.Component {
 				<div className="stars"></div>
 				<div className="twinkling"></div>
 				<div className="content">
+					<h1 className="page__title">Star Wars</h1>
 					<h2 className="section__title">Films</h2>
 					<FilmList films={allFilms} />
 

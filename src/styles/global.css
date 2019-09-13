@@ -9,6 +9,12 @@ body {
 	font-family: "Space Mono", monospace;
 }
 
+.page__title {
+	color: #fff;
+	font-size: 60px;
+	text-align: center;
+}
+
 .section__title {
 	color: #fff;
 	font-size: 48px;
